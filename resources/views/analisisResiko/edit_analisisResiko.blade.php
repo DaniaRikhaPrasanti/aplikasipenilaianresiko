@@ -44,8 +44,8 @@
                                                     <!-- <label>ID daftar Resiko</label> -->
                                                 </div>
                                                 <div class="col-md-8 form-group">
-                                                    <input type="text" id="ID_TUJUANKEGIATAN" class="form-control"
-                                                        name="ID_TUJUANKEGIATAN" value="{{ $daftar_resiko[0]->ID_TUJUANKEGIATAN }}" hidden>
+                                                    <input type="text" id="ID_KEGIATAN" class="form-control"
+                                                        name="ID_KEGIATAN" value="{{ $daftar_resiko[0]->ID_KEGIATAN }}" hidden>
                                                 </div>
 
                                             
@@ -63,7 +63,7 @@
                                                 <div class="col-md-8 form-group">
                                                 <select class="form-control select2" name="ID_SKALA_KEMUNGKINAN">
                                                 @foreach ($skala_kemungkinan as $skor1)
-                                                <option value="{{ $skor1->ID_SKALA_KEMUNGKINAN}}">{{ $skor1->DEFINISI_KEMUNGKINAN}}</option>
+                                                <option value="{{ $skor1->ID_SKALA_KEMUNGKINAN}}"> [{{ $skor1->SKALA_NILAI }}] {{ $skor1->DEFINISI_KEMUNGKINAN}} </option>
                                                 @endforeach
                                                 </select>
                                                 <br>
@@ -75,7 +75,7 @@
                                                 <div class="col-md-8 form-group">
                                                 <select class="form-control select2" name="ID_SKALA_DAMPAK">
                                                 @foreach ($skala_dampak as $skor2)
-                                                <option value="{{ $skor2->ID_SKALA_DAMPAK}}">{{ $skor2->KRITERIA_DAMPAK}}</option>
+                                                <option value="{{ $skor2->ID_SKALA_DAMPAK}}">[{{ $skor2->SKALA_NILAI_DAMPAK }}]  {{ $skor2->KRITERIA_DAMPAK}}</option>
                                                 @endforeach
                                                 </select>
                                                 <br>

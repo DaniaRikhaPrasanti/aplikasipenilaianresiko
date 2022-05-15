@@ -16,8 +16,7 @@ class C_analisisResiko extends Controller
         $user = DB::table('user')->get();
         $tujuan_skpd = DB::table('tujuan_skpd')->get();
         $sasaran = DB::table('sasaran')->get();
-        $nama_kegiatan = DB::table('nama_kegiatan')->get();
-        $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
+        $kegiatan = DB::table('kegiatan')->get();   
         $daftar_resiko = DB::table('daftar_resiko')->get();
         $skala_kemungkinan = DB::table('skala_kemungkinan')->get();
         $skala_dampak = DB::table('skala_dampak')->get();
@@ -31,8 +30,8 @@ class C_analisisResiko extends Controller
             'user' => $user,
             'tujuan_skpd' => $tujuan_skpd,
             'sasaran' => $sasaran,
-            'nama_kegiatan' => $nama_kegiatan,
-            'tujuan_kegiatan' => $tujuan_kegiatan,
+            'kegiatan' => $kegiatan,
+            // 'tujuan_kegiatan' => $tujuan_kegiatan,
             'daftar_resiko' => $daftar_resiko,
             'skala_kemungkinan' => $skala_kemungkinan,
             'skala_dampak' => $skala_dampak,
@@ -49,8 +48,8 @@ class C_analisisResiko extends Controller
         $daftar_tujuan_kegiatan = DB::table('daftar_tujuan_kegiatan')->get();
         $user = DB::table('user')->get();
         $daftar_resiko = DB::table('daftar_resiko')->where('ID_DAFTARRESIKO',$ID_DAFTARRESIKO)->get();
-        $nama_kegiatan = DB::table('nama_kegiatan')->get();
-        $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
+        $kegiatan = DB::table('kegiatan')->get();
+        // $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
         $skala_kemungkinan = DB::table('skala_kemungkinan')->get();
         $skala_dampak = DB::table('skala_dampak')->get();
         $keterangan = DB::table('keterangan')->get();
@@ -61,8 +60,8 @@ class C_analisisResiko extends Controller
             'daftar_resiko' => $daftar_resiko,
             'daftar_tujuan_kegiatan' => $daftar_tujuan_kegiatan,
             'user' => $user,
-            'nama_kegiatan' => $nama_kegiatan,
-            'tujuan_kegiatan' => $tujuan_kegiatan,
+            'kegiatan' => $kegiatan,
+            // 'tujuan_kegiatan' => $tujuan_kegiatan,
             'skala_kemungkinan' => $skala_kemungkinan,
             'skala_dampak' => $skala_dampak,
             'submenu' => '',
@@ -74,7 +73,7 @@ class C_analisisResiko extends Controller
     public function update_analisisResiko(Request $post)
     {   
         DB::table('daftar_resiko')->where('ID_DAFTARRESIKO', $post->ID_DAFTARRESIKO)->update([
-            'ID_TUJUANKEGIATAN' => $post->ID_TUJUANKEGIATAN,
+            'ID_KEGIATAN' => $post->ID_KEGIATAN,
             'ID_DAFTARRESIKO' => $post->ID_DAFTARRESIKO,
             'PERNYATAAN_RESIKO' => $post->PERNYATAAN_RESIKO,
             // 'DAMPAK_RESIKO' => $post->DAMPAK_RESIKO,
@@ -101,8 +100,8 @@ class C_analisisResiko extends Controller
         $daftar_tujuan_kegiatan = DB::table('daftar_tujuan_kegiatan')->get();
         $user = DB::table('user')->get();
         $daftar_resiko = DB::table('daftar_resiko')->where('ID_DAFTARRESIKO',$ID_DAFTARRESIKO)->get();
-        $nama_kegiatan = DB::table('nama_kegiatan')->get();
-        $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
+        $kegiatan = DB::table('kegiatan')->get();
+        // $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
         $skala_kemungkinan = DB::table('skala_kemungkinan')->get();
         $skala_dampak = DB::table('skala_dampak')->get();
         $keterangan = DB::table('keterangan')->get();
@@ -114,8 +113,8 @@ class C_analisisResiko extends Controller
             'daftar_resiko' => $daftar_resiko,
             'daftar_tujuan_kegiatan' => $daftar_tujuan_kegiatan,
             'user' => $user,
-            'nama_kegiatan' => $nama_kegiatan,
-            'tujuan_kegiatan' => $tujuan_kegiatan,
+            'kegiatan' => $kegiatan,
+            // 'tujuan_kegiatan' => $tujuan_kegiatan,
             'skala_kemungkinan' => $skala_kemungkinan,
             'skala_dampak' => $skala_dampak,
             'status_analisis' => $status_analisis,
@@ -129,21 +128,7 @@ class C_analisisResiko extends Controller
     {   
         DB::table('daftar_resiko')->where('ID_DAFTARRESIKO', $post->ID_DAFTARRESIKO)->update([
             'ID_STATUS_ANALISIS' => 1,
-            // 'CATATAN2' => $post->CATATAN2,
-            // 'ID_DAFTARRESIKO' => $post->ID_DAFTARRESIKO,
-            // 'PERNYATAAN_RESIKO' => $post->PERNYATAAN_RESIKO,
-            // 'DAMPAK_RESIKO' => $post->DAMPAK_RESIKO,
-            // 'ID_SKALA_KEMUNGKINAN' => $post->ID_SKALA_KEMUNGKINAN,
-            // 'ID_SKALA_DAMPAK' => $post->ID_SKALA_DAMPAK,
-            // 'SKOR_STATUS' => $post->SKOR_STATUS,
-            // 'PENGENDALIAN_YANG_ADA' => $post->PENGENDALIAN_YANG_ADA,
-            // 'YANG_MASIH_DIBUTUHKAN' => $post->YANG_MASIH_DIBUTUHKAN,
-            // 'KETERANGAN' => $post->KETERANGAN,
-            // 'URAIAN_RENCANA_TINDAK_PENGENDALIAN' => $post->URAIAN_RENCANA_TINDAK_PENGENDALIAN,
-            // 'TARGET_WAKTU' => $post->TARGET_WAKTU,
-            // 'PENANGGUNGJAWAB' => $post->PENANGGUNGJAWAB,
-            // 'KETERANGAN2' => $post->KETERANGAN2,
-            // 'id_ket' => $post->id_ket,
+
                
             ]);
     
@@ -156,8 +141,8 @@ class C_analisisResiko extends Controller
         $daftar_tujuan_kegiatan = DB::table('daftar_tujuan_kegiatan')->get();
         $user = DB::table('user')->get();
         $daftar_resiko = DB::table('daftar_resiko')->where('ID_DAFTARRESIKO',$ID_DAFTARRESIKO)->get();
-        $nama_kegiatan = DB::table('nama_kegiatan')->get();
-        $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
+        $kegiatan = DB::table('kegiatan')->get();
+        // $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
         $skala_kemungkinan = DB::table('skala_kemungkinan')->get();
         $skala_dampak = DB::table('skala_dampak')->get();
         $keterangan = DB::table('keterangan')->get();
@@ -173,8 +158,8 @@ class C_analisisResiko extends Controller
             'daftar_resiko' => $daftar_resiko,
             'daftar_tujuan_kegiatan' => $daftar_tujuan_kegiatan,
             'user' => $user,
-            'nama_kegiatan' => $nama_kegiatan,
-            'tujuan_kegiatan' => $tujuan_kegiatan,
+            'kegiatan' => $kegiatan,
+            // 'tujuan_kegiatan' => $tujuan_kegiatan,
             'skala_kemungkinan' => $skala_kemungkinan,
             'skala_dampak' => $skala_dampak,
             'status_analisis' => $status_analisis,
@@ -209,7 +194,7 @@ class C_analisisResiko extends Controller
             return redirect('/analisisResiko');
     }
 
-    public function generateDocx($ID_TUJUANKEGIATAN)
+    public function generateDocx($ID_KEGIATAN)
     {
         // $pegawai = DB::table('pegawai')->where('NIK_PEGAWAI',$NIK_PEGAWAI)->get();
         // $keluarga = DB::table('keluarga')->leftJoin('status_keluarga', 'status_keluarga.ID_STATUS_KELUARGA', '=', 'keluarga.ID_STATUS_KELUARGA')->where('NIK_PEGAWAI',$NIK_PEGAWAI)->get();
@@ -224,9 +209,10 @@ class C_analisisResiko extends Controller
         $daftar_tujuan_kegiatan = DB::table('daftar_tujuan_kegiatan')->get();
         $tujuan_skpd = DB::table('tujuan_skpd')->get();
         $sasaran = DB::table('sasaran')->get();
-        $nama_kegiatan = DB::table('nama_kegiatan')-> get();
-        $tujuan_kegiatan = DB::table('tujuan_kegiatan')->join('nama_kegiatan', 'nama_kegiatan.ID_NAMAKEGIATAN', '=', 'tujuan_kegiatan.ID_NAMAKEGIATAN')->join('sasaran', 'sasaran.ID_SASARAN', '=', 'nama_kegiatan.ID_SASARAN')->join('tujuan_skpd', 'tujuan_skpd.ID_TUJUANSKPD', '=', 'sasaran.ID_TUJUANSKPD')->join('daftar_tujuan_kegiatan', 'daftar_tujuan_kegiatan.ID_DAFTAR', '=', 'tujuan_skpd.ID_DAFTAR')->join('user', 'user.ID_USER', '=', 'daftar_tujuan_kegiatan.ID_USER')->where('ID_TUJUANKEGIATAN',$ID_TUJUANKEGIATAN)->get();
-        $daftar_resiko = DB::table('daftar_resiko')->join('skala_dampak', 'skala_dampak.ID_SKALA_DAMPAK', '=', 'daftar_resiko.ID_SKALA_DAMPAK')->join('skala_kemungkinan', 'skala_kemungkinan.ID_SKALA_KEMUNGKINAN', '=', 'daftar_resiko.ID_SKALA_KEMUNGKINAN')->where('ID_TUJUANKEGIATAN',$ID_TUJUANKEGIATAN)->get();
+        // $nama_kegiatan = DB::table('nama_kegiatan')-> get();
+        // $tujuan_kegiatan = DB::table('tujuan_kegiatan')->join('nama_kegiatan', 'nama_kegiatan.ID_NAMAKEGIATAN', '=', 'tujuan_kegiatan.ID_NAMAKEGIATAN')->join('sasaran', 'sasaran.ID_SASARAN', '=', 'nama_kegiatan.ID_SASARAN')->join('tujuan_skpd', 'tujuan_skpd.ID_TUJUANSKPD', '=', 'sasaran.ID_TUJUANSKPD')->join('daftar_tujuan_kegiatan', 'daftar_tujuan_kegiatan.ID_DAFTAR', '=', 'tujuan_skpd.ID_DAFTAR')->join('user', 'user.ID_USER', '=', 'daftar_tujuan_kegiatan.ID_USER')->where('ID_KEGIATAN',$ID_KEGIATAN)->get();
+        $kegiatan = DB::table('kegiatan')->join('sasaran', 'sasaran.ID_SASARAN', '=', 'kegiatan.ID_SASARAN')->join('tujuan_skpd', 'tujuan_skpd.ID_TUJUANSKPD', '=', 'sasaran.ID_TUJUANSKPD')->join('daftar_tujuan_kegiatan', 'daftar_tujuan_kegiatan.ID_DAFTAR', '=', 'tujuan_skpd.ID_DAFTAR')->join('user', 'user.ID_USER', '=', 'daftar_tujuan_kegiatan.ID_USER')->where('ID_KEGIATAN',$ID_KEGIATAN)->get();
+        $daftar_resiko = DB::table('daftar_resiko')->join('skala_dampak', 'skala_dampak.ID_SKALA_DAMPAK', '=', 'daftar_resiko.ID_SKALA_DAMPAK')->join('skala_kemungkinan', 'skala_kemungkinan.ID_SKALA_KEMUNGKINAN', '=', 'daftar_resiko.ID_SKALA_KEMUNGKINAN')->where('ID_KEGIATAN',$ID_KEGIATAN)->get();
         $skala_dampak = DB::table('skala_dampak')->get();
         $skala_kemungkinan = DB::table('skala_kemungkinan')->get();
         $data = array(
@@ -234,19 +220,18 @@ class C_analisisResiko extends Controller
             'daftar_tujuan_kegiatan' => $daftar_tujuan_kegiatan,
             'tujuan_skpd' => $tujuan_skpd,
             'sasaran' => $sasaran,
-            'nama_kegiatan' => $nama_kegiatan,
-            'tujuan_kegiatan' => $tujuan_kegiatan,
+            // 'nama_kegiatan' => $nama_kegiatan,
+            // 'tujuan_kegiatan' => $tujuan_kegiatan,
             'skala_dampak' => $skala_dampak,
             'skala_kemungkinan' => $skala_kemungkinan,
-            'tujuan_kegiatan' => $tujuan_kegiatan,
             'daftar_resiko' => $daftar_resiko,
         );
 
         $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(storage_path('Templateform3.docx'));
 
-        $templateProcessor->setValue('NAMA_SKPD', $tujuan_kegiatan[0]->NAMA_SKPD);
-        $templateProcessor->setValue('URAIAN_NAMAKEGIATAN', $tujuan_kegiatan[0]->URAIAN_NAMAKEGIATAN);
-        $templateProcessor->setValue('URAIAN_TUJUANKEGIATAN', $tujuan_kegiatan[0]->URAIAN_TUJUANKEGIATAN);
+        $templateProcessor->setValue('NAMA_SKPD', $kegiatan[0]->NAMA_SKPD);
+        $templateProcessor->setValue('URAIAN_NAMAKEGIATAN', $kegiatan[0]->URAIAN_NAMAKEGIATAN);
+        $templateProcessor->setValue('URAIAN_TUJUANKEGIATAN', $kegiatan[0]->URAIAN_TUJUANKEGIATAN);
         // $templateProcessor->setValue('DAMPAK_RESIKO', $daftar_resiko[0]->DAMPAK_RESIKO);
         // $templateProcessor->setValue('TTL_PEGAWAI', $pegawai[0]->TTL_PEGAWAI);
         // $templateProcessor->setValue('NIP_PEGAWAI', $pegawai[0]->NIP_PEGAWAI);

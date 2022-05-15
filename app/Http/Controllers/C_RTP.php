@@ -16,8 +16,9 @@ class C_RTP extends Controller
         $nama = Auth::user()->name;
         $tujuan_skpd = DB::table('tujuan_skpd')->get();
         $sasaran = DB::table('sasaran')->get();
-        $nama_kegiatan = DB::table('nama_kegiatan')->get();
-        $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
+        $kegiatan = DB::table('kegiatan')->get();
+        // $nama_kegiatan = DB::table('nama_kegiatan')->get();
+        // $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
         $daftar_resiko = DB::table('daftar_resiko')->get();
         $skala_kemungkinan = DB::table('skala_kemungkinan')->get();
         $skala_dampak = DB::table('skala_dampak')->get();
@@ -31,8 +32,9 @@ class C_RTP extends Controller
             'user' => $user,
             'tujuan_skpd' => $tujuan_skpd,
             'sasaran' => $sasaran,
-            'nama_kegiatan' => $nama_kegiatan,
-            'tujuan_kegiatan' => $tujuan_kegiatan,
+            // 'nama_kegiatan' => $nama_kegiatan,
+            // 'tujuan_kegiatan' => $tujuan_kegiatan,
+            'kegiatan' => $kegiatan,
             'daftar_resiko' => $daftar_resiko,
             'skala_kemungkinan' => $skala_kemungkinan,
             'skala_dampak' => $skala_dampak,
@@ -48,9 +50,10 @@ class C_RTP extends Controller
         $daftar_tujuan_kegiatan = DB::table('daftar_tujuan_kegiatan')->get();
         $user = DB::table('user')->get();
         $nama = Auth::user()->name;
+        $kegiatan = DB::table('kegiatan')->get();
         $daftar_resiko = DB::table('daftar_resiko')->where('ID_DAFTARRESIKO',$ID_DAFTARRESIKO)->get();
-        $nama_kegiatan = DB::table('nama_kegiatan')->get();
-        $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
+        // $nama_kegiatan = DB::table('nama_kegiatan')->get();
+        // $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
         $skala_kemungkinan = DB::table('skala_kemungkinan')->get();
         $skala_dampak = DB::table('skala_dampak')->get();
         $keterangan = DB::table('keterangan')->get();
@@ -62,8 +65,8 @@ class C_RTP extends Controller
             'daftar_resiko' => $daftar_resiko,
             'daftar_tujuan_kegiatan' => $daftar_tujuan_kegiatan,
             'user' => $user,
-            'nama_kegiatan' => $nama_kegiatan,
-            'tujuan_kegiatan' => $tujuan_kegiatan,
+            // 'nama_kegiatan' => $nama_kegiatan,
+            // 'tujuan_kegiatan' => $tujuan_kegiatan,
             'skala_kemungkinan' => $skala_kemungkinan,
             'skala_dampak' => $skala_dampak,
             'submenu' => '',

@@ -136,7 +136,7 @@ Route::get('/analisisResiko_konfirmasi_analisisResiko_{ID_DAFTARRESIKO}', [C_ana
 Route::post('/analisisResiko_valid_analisisResiko', [C_analisisResiko::class, 'valid_analisisResiko'])->middleware('auth');
 Route::get('/analisisResiko_konfirmasi2_analisisResiko_{ID_DAFTARRESIKO}', [C_analisisResiko::class, 'konfirmasi2_analisisResiko'])->middleware('auth');
 Route::post('/analisisResiko_revisi_analisisResiko', [C_analisisResiko::class, 'revisi_analisisResiko'])->middleware('auth');
-Route::get('/analisisResiko_generate-docx_{ID_TUJUANKEGIATAN}', [C_analisisResiko::class, 'generateDocx'])->middleware('auth');
+Route::get('/analisisResiko_generate-docx_{ID_KEGIATAN}', [C_analisisResiko::class, 'generateDocx'])->middleware('auth');
 
 Route::get('/RTP', [C_RTP::class, 'index'])->middleware('auth');
 Route::get('RTP_insert_RTP', [C_RTP::class, 'insert_RTP'])->middleware('auth');

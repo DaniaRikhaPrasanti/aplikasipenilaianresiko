@@ -57,7 +57,7 @@
 					</a>
 					@endcan
 					<a href='/namaKegiatan_view_namaKegiatan_{{ $data->ID_SASARAN }}'>
-					<button type="button" class="btn btn-sm btn-info"><i class="fas fa-trash"></i> lihat Kegiatan</button>
+					<button type="button" class="btn btn-sm btn-info"><i class="bi bi-eye-fill"></i> Kegiatan</button>
 					</a>
                     </td>
 					</tr>

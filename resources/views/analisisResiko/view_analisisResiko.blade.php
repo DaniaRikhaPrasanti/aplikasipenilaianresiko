@@ -54,11 +54,8 @@
             @foreach($daftar_resiko as $data)
             <tr>
             <td>
-                    @foreach($tujuan_kegiatan as $tujuan1)
-                    @if ($tujuan1->ID_TUJUANKEGIATAN === $data->ID_TUJUANKEGIATAN)
-
-                    @foreach($nama_kegiatan as $nama2)
-					@if ($nama2->ID_NAMAKEGIATAN === $tujuan1->ID_NAMAKEGIATAN)
+            @foreach($kegiatan as $nama2)
+					@if ($nama2->ID_KEGIATAN === $data->ID_KEGIATAN)
 					
                     @foreach($sasaran as $sas2)
 					@if ($sas2->ID_SASARAN === $nama2->ID_SASARAN)
@@ -84,15 +81,10 @@
 					@endforeach
                     @endif
 					@endforeach
-                    @endif
-					@endforeach
                     </td>
-            <td>
-                    @foreach($tujuan_kegiatan as $tuj1)
-                    @if ($tuj1->ID_TUJUANKEGIATAN === $data->ID_TUJUANKEGIATAN)
-
-                    @foreach($nama_kegiatan as $nama1)
-					@if ($nama1->ID_NAMAKEGIATAN === $tuj1->ID_NAMAKEGIATAN)
+            <td> 
+                    @foreach($kegiatan as $nama1)
+					@if ($nama1->ID_KEGIATAN === $data->ID_KEGIATAN)
 					
                     @foreach($sasaran as $sas1)
 					@if ($sas1->ID_SASARAN === $nama1->ID_SASARAN)
@@ -112,26 +104,19 @@
 					@endforeach 
                     @endif
 					@endforeach
-                    @endif
-					@endforeach
                     </td>
-            <td>
-                    @foreach($tujuan_kegiatan as $tuj1)
-                    @if ($tuj1->ID_TUJUANKEGIATAN === $data->ID_TUJUANKEGIATAN)
-
-                    @foreach($nama_kegiatan as $nama1)
-					@if ($nama1->ID_NAMAKEGIATAN === $tuj1->ID_NAMAKEGIATAN)
-					{{$nama1->URAIAN_NAMAKEGIATAN}}
+                    <td>
+                    @foreach($kegiatan as $tujuan)
+					@if ($tujuan->ID_KEGIATAN === $data->ID_KEGIATAN)
+					{{$tujuan->URAIAN_NAMAKEGIATAN}}
 					@endif
 					@endforeach 
-                    @endif
-					@endforeach
                     </td>
 
-            <td>
-                    @foreach($tujuan_kegiatan as $tujuan)
-					@if ($tujuan->ID_TUJUANKEGIATAN === $data->ID_TUJUANKEGIATAN)
-					{{$tujuan->URAIAN_TUJUANKEGIATAN}}
+                    <td>
+                    @foreach($kegiatan as $tujuan4)
+					@if ($tujuan4->ID_KEGIATAN === $data->ID_KEGIATAN)
+					{{$tujuan4->URAIAN_TUJUANKEGIATAN}}
 					@endif
 					@endforeach 
                     </td>
@@ -162,9 +147,9 @@
                     <td>{{ $data->CATATAN2 }}</td>
                     <td>
                     <a href='/analisisResiko_edit_analisisResiko_{{ $data->ID_DAFTARRESIKO }}'>
-					<button type="button" class="btn btn-sm btn-info"><i class="fas fa-trash"></i>Edit</button>
+					<button type="button" class="btn btn-sm btn-info"><i class="bi bi-pencil-square"></i></button>
                     </a>
-                    <a href='/analisisResiko_generate-docx_{{ $data->ID_TUJUANKEGIATAN }}'>
+                    <a href='/analisisResiko_generate-docx_{{ $data->ID_KEGIATAN }}'>
 					<button type="button" class="btn btn-sm btn-secondary"><i class="fas fa-print"></i> Cetak</button>
 					</a>
                     @can('konfirmasi-analsisisResiko')
