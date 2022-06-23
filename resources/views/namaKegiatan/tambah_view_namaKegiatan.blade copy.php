@@ -19,7 +19,7 @@
                     <div class="col-md-20 col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Input Data Nama Kegiatan</h4>
+                                <h4 class="card-title">Input Data Kegiatan dan Tujuan Kegiatan</h4>
                             </div>
                             <form action="/namaKegiatan_tambah_view_namaKegiatan" method="post" enctype="multipart/form-data">
                             <input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>">   

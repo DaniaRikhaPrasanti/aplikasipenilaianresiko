@@ -128,20 +128,22 @@
                     <td>{{ $data->PENANGGUNGJAWAB }}</td>
                     <td>{{ $data->KETERANGAN2 }}</td>
                     <td>
-                        @foreach($status_rtp as $status)
+                    @foreach($status_rtp as $status)
                         @if ($status->ID_STATUS_RTP === $data->ID_STATUS_RTP)
-                        {{$status->STATUS}}
+                        @if ($status->ID_STATUS_RTP == 1 ) <span class="badge bg-success">  valid
+                            @elseif ($status->ID_STATUS_RTP == 2 ) <span class="badge bg-warning"> revisi<!-- {{$status->STATUS}} -->
+                        @endif
                         @endif
                         @endforeach 
                     </td>
                     <td>{{ $data->CATATAN4 }}</td>
                     <td>
                     <a href='/RTP_edit_RTP_{{ $data->ID_DAFTARRESIKO }}'>
-					<button type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></button>
+					<button type="button" class="btn btn-sm btn-info"><i class="bi bi-pencil-square"></i></button>
 					</a>
                     @can('konfirmasi-RTP')
                     <a href='/RTP_konfirmasi_RTP_{{ $data->ID_DAFTARRESIKO }}'>
-					<button type="button" class="btn btn-primary"><i class="fas fa-trash"></i>Konfirmasi</button>
+					<button type="button" class="btn btn-sm btn-primary"><i class="fas fa-trash"></i>Konfirmasi</button>
                     @endcan	
                     </a>
                     </td>

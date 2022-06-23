@@ -106,6 +106,8 @@
                         </li>
                         @endcan
 
+
+                        @can('sidebar-daftarresikoUser')
                         @if($menu == 'daftar_resiko')
                             <li class="sidebar-item active">
                             <a href="/daftarResiko" class='sidebar-link'>
@@ -117,7 +119,24 @@
                                 <span>Daftar Risiko</span>
                             </a>
                         </li>
+                        @endcan
 
+
+                        @can('sidebar-daftarresiko')
+                        @if($menu == 'daftar_resiko_admin')
+                            <li class="sidebar-item active">
+                            <a href="/daftarResikoAdmin" class='sidebar-link'>
+                        @else  
+                            <li class="sidebar-item ">
+                            <a href="/daftarResikoAdmin" class='sidebar-link'>
+                        @endif
+                                <i class="bi bi-stack"></i>
+                                <span>Daftar Risiko</span>
+                            </a>
+                        </li>
+                        @endcan
+
+                        @can('sidebar-analisisresikoUser')
                         @if($menu == 'analisis_resiko')
                             <li class="sidebar-item active">
                             <a href="/analisisResiko" class='sidebar-link'>
@@ -129,7 +148,23 @@
                                 <span>Analisis Risiko</span>
                             </a>
                         </li>
+                        @endcan
 
+                        @can('sidebar-analisisresiko')
+                        @if($menu == 'analisis_resiko_admin')
+                            <li class="sidebar-item active">
+                            <a href="/analisisResikoAdmin" class='sidebar-link'>
+                        @else  
+                            <li class="sidebar-item ">
+                            <a href="/analisisResikoAdmin" class='sidebar-link'>
+                        @endif
+                                <i class="bi bi-stack"></i>
+                                <span>Analisis Risiko</span>
+                            </a>
+                        </li>
+                        @endcan
+
+                        @can('sidebar-celahpengendalianUser')
                         @if($menu == 'celah_pengendalian')
                             <li class="sidebar-item active">
                             <a href="/celahPengendalian" class='sidebar-link'>
@@ -141,7 +176,23 @@
                                 <span>Identifikasi Celah Pengendalian</span>
                             </a>
                         </li>
+                        @endcan
 
+                        @can('sidebar-celahpengendalian')
+                        @if($menu == 'celah_pengendalian')
+                            <li class="sidebar-item active">
+                            <a href="/celahPengendalianAdmin" class='sidebar-link'>
+                        @else  
+                            <li class="sidebar-item ">
+                            <a href="/celahPengendalianAdmin" class='sidebar-link'>
+                        @endif
+                                <i class="bi bi-stack"></i>
+                                <span>Identifikasi Celah Pengendalian</span>
+                            </a>
+                        </li>
+                        @endcan
+
+                        @can('sidebar-rtpUser')
                         @if($menu == 'rtp')
                             <li class="sidebar-item active">
                             <a href="/RTP" class='sidebar-link'>
@@ -153,6 +204,22 @@
                                 <span>Rencana Tindak Pengendalian (RTP)</span>
                             </a>
                         </li>
+                        @endcan
+
+                        @can('sidebar-rtp')
+                        @if($menu == 'rtp_admin')
+                            <li class="sidebar-item active">
+                            <a href="/RTPAdmin" class='sidebar-link'>
+                        @else  
+                            <li class="sidebar-item ">
+                            <a href="/RTPAdmin" class='sidebar-link'>
+                        @endif
+                                <i class="bi bi-stack"></i>
+                                <span>Rencana Tindak Pengendalian (RTP)</span>
+                            </a>
+                        </li>
+                        @endcan
+
 
                         <!-- <li class="sidebar-item">
                             <a href="/realisasiRTP" class='sidebar-link'>

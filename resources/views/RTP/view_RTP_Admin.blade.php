@@ -2,7 +2,7 @@
 
 @section("page_title","Aplikasi Penilaian Resiko")
 
-@section("title","Data Daftar Resiko")
+@section("title","Rencana Tindak Pengendalian")
 
 @section("breadcrumb")
 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
 
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
@@ -25,9 +26,14 @@
 @section("content")
 <div class="card">
     <div class="card-header">
-        Tabel Daftar Resiko 
+        Tabel Rencana Tindak Pengendalian
     </div>
     
+
+    <!-- <a href="/daftarResiko_insert_daftarResiko">
+	<button type="button" class="btn btn-info float-right" style="float: right; margin-right: 35px"><i class="fas fa-plus"></i> Tambah Data Resiko </button>
+	</a> -->
+
     <div class="card-body">
         <table class="table table-striped" id="table1">
             <thead>
@@ -37,7 +43,10 @@
                     <th style="text-align:center">Nama Kegiatan</th>
                     <th style="text-align:center">Tujuan Kegiatan</th>
                     <th style="text-align:center">Pernyataan Risiko</th>
-                    <th style="text-align:center">Dampak</th>
+                    <th style="text-align:center">Uraian Tidak Pengendalian</th>
+                    <th style="text-align:center">Target Waktu</th>
+                    <th style="text-align:center">Penanggung Jawab</th>
+                    <th style="text-align:center">Keterangan</th>
                     <th style="text-align:center">Status</th>
                     <th style="text-align:center">Catatan</th>
                     <th style="text-align:center">Aksi</th>
@@ -76,7 +85,7 @@
 					@endforeach
                     </td>
             <td>
-                    @foreach($kegiatan as $nama1)
+            @foreach($kegiatan as $nama1)
 					@if ($nama1->ID_KEGIATAN === $data->ID_KEGIATAN)
 					
                     @foreach($sasaran as $sas1)
@@ -114,33 +123,30 @@
 					@endforeach 
                     </td>
                     <td>{{ $data->PERNYATAAN_RESIKO }}</td>
-                    <td>{{ $data->DAMPAK_RESIKO }}</td>
+                    <td>{{ $data->URAIAN_RENCANA_TINDAK_PENGENDALIAN }}</td>
+                    <td>{{ $data->TARGET_WAKTU }}</td>
+                    <td>{{ $data->PENANGGUNGJAWAB }}</td>
+                    <td>{{ $data->KETERANGAN2 }}</td>
                     <td>
-                         @foreach($status as $status1)
-                        @if ($status1->ID_STATUS === $data->ID_STATUS)
-                            @if ($status1->ID_STATUS == 1 ) <span class="badge bg-success">  valid
-                            @elseif ($status1->ID_STATUS == 2 ) <span class="badge bg-warning"> revisi
-                            <!-- {{$status1->STATUS}} -->
-                            @endif
+                        @foreach($status_rtp as $status)
+                        @if ($status->ID_STATUS_RTP === $data->ID_STATUS_RTP)
+                        @if ($status->ID_STATUS_RTP == 1 ) <span class="badge bg-success">  valid
+                        @elseif ($status->ID_STATUS_RTP == 2 ) <span class="badge bg-warning"> revisi
+                        <!-- {{$status->STATUS}} -->
+                        @endif
                         @endif
                         @endforeach 
-                        </span>
                     </td>
-                    <td>{{ $data->CATATAN1 }}</td>
+                    <td>{{ $data->CATATAN4 }}</td>
                     <td>
-                    <a href='/daftarResiko_edit_daftarResiko_{{ $data->ID_DAFTARRESIKO }}'>
+                    <a href='/RTP_edit_RTP_{{ $data->ID_DAFTARRESIKO }}'>
 					<button type="button" class="btn btn-sm btn-info"><i class="bi bi-pencil-square"></i></button>
 					</a>
-
-                    <a href='/daftarResiko_generate-docx_{{ $data->ID_KEGIATAN }}'>
-					<button type="button" class="btn btn-sm btn-secondary"><i class="fas fa-print"></i> Cetak</button>
-					</a>
-
-                    @can('konfirmasi-daftarResiko')
-                    <a href='/daftarResiko_konfirmasi_daftarResiko_{{ $data->ID_DAFTARRESIKO }}'>
+                    @can('konfirmasi-RTP')
+                    <a href='/RTP_konfirmasi_RTP_{{ $data->ID_DAFTARRESIKO }}'>
 					<button type="button" class="btn btn-sm btn-primary"><i class="fas fa-trash"></i>Konfirmasi</button>
-                    @endcan
-					</a>
+                    @endcan	
+                    </a>
                     </td>
             </tr> 
             @endforeach

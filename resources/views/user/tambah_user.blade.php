@@ -31,65 +31,106 @@
                                     <form class="form form-horizontal">
                                         <div class="form-body">
                                             <div class="row">
-                                                <div class="col-md-4">
+                                                <!-- <div class="col-md-4">
                                                     <label>ID USER</label>
                                                 </div>
                                                 <div class="col-md-8 form-group">
                                                     <input type="text" id="ID_USER" class="form-control"
                                                         name="ID_USER" placeholder="ID User">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label>NAMA SKPD</label>
-                                                </div>
-                                                <div class="col-md-8 form-group">
-                                                    <input type="text" id="NAMA_SKPD" class="form-control"
-                                                        name="NAMA_SKPD" placeholder="Nama SKPD ">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label>USERNAME</label>
-                                                </div>
-                                                <div class="col-md-8 form-group">
-                                                    <input type="text" id="USERNAME" class="form-control"
-                                                        name="USERNAME" placeholder="Username">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label>EMAIL</label>
-                                                </div>
-                                                <div class="col-md-8 form-group">
-                                                    <input type="text" id="email" class="form-control"
-                                                        name="email" placeholder="Email">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label>PASSWORD</label>
-                                                </div>
-                                                <div class="col-md-8 form-group">
-                                                    <input type="password" id="password" class="form-control"
-                                                        name="password" placeholder="Password">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label>Kepala SKPD</label>
-                                                </div>
-                                                <div class="col-md-8 form-group">
-                                                    <input type="text" id="KEPALA_SKPD" class="form-control"
-                                                        name="KEPALA_SKPD" placeholder="Nama Kepala SKPD yang menjabat saat ini">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label>NIP Kepala SKPD</label>
-                                                </div>
-                                                <div class="col-md-8 form-group">
-                                                    <input type="text" id="NIP_KEPALA" class="form-control"
-                                                        name="NIP_KEPALA" placeholder="NIP Kepala SKPD yang menjabat">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label>ROLE</label>
-                                                </div>
-                                                <div class="col-md-8 form-group">
+                                                </div>  -->
+
+                                    
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="NAMA_SKPD">Nama SKPD</label>
+                                                            <div class="position-relative">
+                                                                <input type="text" class="form-control"  name="NAMA_SKPD"
+                                                                    placeholder="Input Nama SKPD"
+                                                                    id="NAMA_SKPD">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-person"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="USERNAME">Username</label>
+                                                            <div class="position-relative">
+                                                                <input type="text" class="form-control"  name="USERNAME"
+                                                                    placeholder="Input Username"
+                                                                    id="USERNAME">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-file-person"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="email">Email</label>
+                                                            <div class="position-relative">
+                                                                <input type="text" class="form-control" name="email"
+                                                                    placeholder="Email" id="email">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-envelope"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="password">Password</label>
+                                                            <div class="position-relative">
+                                                                <input type="password" class="form-control" name="password"
+                                                                    placeholder="Password" id="password">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-lock"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="KEPALA_SKPD">Kepala SKPD</label>
+                                                            <div class="position-relative">
+                                                                <input type="text" class="form-control" name="KEPALA_SKPD"
+                                                                    placeholder="Input nama kepala SKPD yang menjabat saat ini" id="KEPALA_SKPD">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-person-circle"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="NIP_KEPALA">NIP Kepala SKPD</label>
+                                                            <div class="position-relative">
+                                                                <input type="text" class="form-control" name="NIP_KEPALA"
+                                                                    placeholder="Input NIK kepala SKPD yang menjabat saat ini" id="NIP_KEPALA">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-person-badge"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                        <label for="ID_ROLE">ROLE</label>
+                                                         <div class="position-relative">
                                                 <select class="form-control select2" name="ID_ROLE">
                                                 @foreach ($role as $datarole)
                                                 <option value="{{ $datarole->ID_ROLE}}">{{ $datarole->NAMA_ROLE}}</option>
                                                 @endforeach
                                                 </select>
                                                 <br>
+                                                </div>
                                                 </div>
                                                 <div class="col-sm-12 d-flex justify-content-end">
                                                     <button type="submit"

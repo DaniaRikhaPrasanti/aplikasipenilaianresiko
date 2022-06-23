@@ -2,7 +2,7 @@
 
 @section("page_title","Aplikasi Penilaian Resiko")
 
-@section("title","Data Daftar Resiko")
+@section("title","Data Form Analisis Daftar Resiko")
 
 @section("breadcrumb")
 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
 
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
@@ -25,19 +26,25 @@
 @section("content")
 <div class="card">
     <div class="card-header">
-        Tabel Daftar Resiko 
+        Tabel Analisis Daftar Resiko Kegiatan
     </div>
-    
+
+    <!-- <a href="/daftarResiko_insert_daftarResiko">
+	<button type="button" class="btn btn-info float-right" style="float: right; margin-right: 35px"><i class="fas fa-plus"></i> Tambah Data Resiko </button>
+	</a> -->
+
     <div class="card-body">
         <table class="table table-striped" id="table1">
             <thead>
-                <tr> 
+                <tr>
                     <th style="text-align:center">Nama SKPD</th>
-                    <th style="text-align:center">Tahun Anggaran</th>   
+                    <th style="text-align:center">Tahun Anggaran</th>
                     <th style="text-align:center">Nama Kegiatan</th>
                     <th style="text-align:center">Tujuan Kegiatan</th>
                     <th style="text-align:center">Pernyataan Risiko</th>
-                    <th style="text-align:center">Dampak</th>
+                    <th style="text-align:center">Skor Kemungkinan</th>
+                    <th style="text-align:center">Skor Dampak</th>
+                    <th style="text-align:center">Skor Status</th> 
                     <th style="text-align:center">Status</th>
                     <th style="text-align:center">Catatan</th>
                     <th style="text-align:center">Aksi</th>
@@ -75,7 +82,7 @@
                     @endif
 					@endforeach
                     </td>
-            <td>
+            <td> 
                     @foreach($kegiatan as $nama1)
 					@if ($nama1->ID_KEGIATAN === $data->ID_KEGIATAN)
 					
@@ -98,7 +105,7 @@
                     @endif
 					@endforeach
                     </td>
-            <td>
+                    <td>
                     @foreach($kegiatan as $tujuan)
 					@if ($tujuan->ID_KEGIATAN === $data->ID_KEGIATAN)
 					{{$tujuan->URAIAN_NAMAKEGIATAN}}
@@ -113,34 +120,46 @@
 					@endif
 					@endforeach 
                     </td>
+
                     <td>{{ $data->PERNYATAAN_RESIKO }}</td>
-                    <td>{{ $data->DAMPAK_RESIKO }}</td>
                     <td>
-                         @foreach($status as $status1)
-                        @if ($status1->ID_STATUS === $data->ID_STATUS)
-                            @if ($status1->ID_STATUS == 1 ) <span class="badge bg-success">  valid
-                            @elseif ($status1->ID_STATUS == 2 ) <span class="badge bg-warning"> revisi
-                            <!-- {{$status1->STATUS}} -->
-                            @endif
+                        @foreach($skala_kemungkinan as $skala1)
+						@if ($skala1->ID_SKALA_KEMUNGKINAN === $data->ID_SKALA_KEMUNGKINAN)
+								{{$skala1->SKALA_NILAI}}<br>
+						@endif
+						@endforeach
+                    </td>
+                    <td>
+                        @foreach($skala_dampak as $skala2)
+						@if ($skala2->ID_SKALA_DAMPAK === $data->ID_SKALA_DAMPAK)
+								{{$skala2->SKALA_NILAI_DAMPAK}}<br>
+						@endif
+						@endforeach
+                    </td>
+                    <td>{{ $data->SKOR_STATUS }}</td>
+                    <td>
+                        @foreach($status_analisis as $status)
+                        @if ($status->ID_STATUS_ANALISIS === $data->ID_STATUS_ANALISIS)
+                        @if ($status->ID_STATUS_ANALISIS == 1) <span class="badge bg-success">  valid
+                        @elseif ($status->ID_STATUS_ANALISIS == 2) <span class="badge bg-warning"> revisi
+                        <!-- {{$status->STATUS}} -->
+                        @endif
                         @endif
                         @endforeach 
-                        </span>
                     </td>
-                    <td>{{ $data->CATATAN1 }}</td>
+                    <td>{{ $data->CATATAN2 }}</td>
                     <td>
-                    <a href='/daftarResiko_edit_daftarResiko_{{ $data->ID_DAFTARRESIKO }}'>
+                    <a href='/analisisResiko_edit_analisisResiko_{{ $data->ID_DAFTARRESIKO }}'>
 					<button type="button" class="btn btn-sm btn-info"><i class="bi bi-pencil-square"></i></button>
-					</a>
-
-                    <a href='/daftarResiko_generate-docx_{{ $data->ID_KEGIATAN }}'>
+                    </a>
+                    <a href='/analisisResiko_generate-docx_{{ $data->ID_KEGIATAN }}'>
 					<button type="button" class="btn btn-sm btn-secondary"><i class="fas fa-print"></i> Cetak</button>
 					</a>
-
-                    @can('konfirmasi-daftarResiko')
-                    <a href='/daftarResiko_konfirmasi_daftarResiko_{{ $data->ID_DAFTARRESIKO }}'>
+                    @can('konfirmasi-analsisisResiko')
+                    <a href='/analisisResiko_konfirmasi_analisisResiko_{{ $data->ID_DAFTARRESIKO }}'>
 					<button type="button" class="btn btn-sm btn-primary"><i class="fas fa-trash"></i>Konfirmasi</button>
                     @endcan
-					</a>
+                    </a>
                     </td>
             </tr> 
             @endforeach

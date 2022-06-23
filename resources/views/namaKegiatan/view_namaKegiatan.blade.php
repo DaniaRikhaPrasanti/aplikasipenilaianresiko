@@ -34,7 +34,7 @@
 						<th style="text-align:center">Sasaran</th>
 						<th style="text-align:center">Nama Kegiatan</th>
 						<th style="text-align:center">Tujuan Kegiatan</th>
-						<th style="text-align:center" width="35%">Aksi</th>
+						<th style="text-align:center" width="20%">Aksi</th>
 					</tr>
 					</thead>
 					<tbody>
@@ -64,10 +64,10 @@
                     <td>
 					@can('aksi-namakegiatan')
 					<a href='/namaKegiatan_hapus_{{ $data->ID_KEGIATAN }}&{{ $data->ID_SASARAN }}'>
-					<button type="button" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> </button>
+					<button type="button" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
 
 					<a href='/namaKegiatan_edit_view_namaKegiatan_{{ $data->ID_KEGIATAN }}'>
-					<button type="button" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i> </button>
+					<button type="button" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button>
 					</a>
 
 					<a href='/daftarResiko_tambah_daftarResiko_{{ $data->ID_KEGIATAN  }}'>

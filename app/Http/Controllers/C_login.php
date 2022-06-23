@@ -16,14 +16,6 @@ class C_login extends Controller
     //
     public function index()
     {
-        // $pengaduan = DB::table('pengaduan')->whereIn('ID_STATUS_PENGADUAN', ['null', 1])->get();
-        // // $pengaduan = DB::table('pengaduan')->whereNull('ID_STATUS_PENGADUAN')->get();
-        // // where('ID_STATUS_PENGADUAN', 1)->get();
-        // $opd = DB::table('opd')->get();
-        // $status_pengaduan = DB::table('status_pengaduan')->get();
-        // $jenis_pengaduan = DB::table('jenis_pengaduan')->get();
-        // $user = DB::table('user')->get();
-
         $data = array(
             'menu' => '',
             // 'pengaduan' => $pengaduan,

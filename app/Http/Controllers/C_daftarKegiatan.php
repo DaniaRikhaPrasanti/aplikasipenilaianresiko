@@ -42,7 +42,7 @@ class C_daftarKegiatan extends Controller
         $tujuan_skpd = DB::table('tujuan_skpd')->get();
         $sasaran = DB::table('sasaran')->get();
         $kegiatan = DB::table('kegiatan')->get();
-        $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
+        // $tujuan_kegiatan = DB::table('tujuan_kegiatan')->get();
       
         $data = array(
             'menu' => 'daftar_tujuan_kegiatan_admin',
@@ -52,7 +52,7 @@ class C_daftarKegiatan extends Controller
             'tujuan_skpd' => $tujuan_skpd,
             'sasaran' => $sasaran,
             'kegiatan' => $kegiatan,
-            'tujuan_kegiatan' => $tujuan_kegiatan,
+            // 'tujuan_kegiatan' => $tujuan_kegiatan,
             'submenu' => '',
         );
 

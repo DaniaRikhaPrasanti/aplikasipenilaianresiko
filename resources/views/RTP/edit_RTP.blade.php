@@ -40,12 +40,12 @@
                                                         name="ID_DAFTARRESIKO" value="{{ $daftar_resiko[0]->ID_DAFTARRESIKO }}" hidden>
                                                 </div>
 
-                                            <div class="col-md-4">
+                                                <div class="col-md-4">
                                                     <!-- <label>ID daftar Resiko</label> -->
                                                 </div>
                                                 <div class="col-md-8 form-group">
-                                                    <input type="text" id="ID_TUJUANKEGIATAN" class="form-control"
-                                                        name="ID_TUJUANKEGIATAN" value="{{ $daftar_resiko[0]->ID_TUJUANKEGIATAN }}" hidden>
+                                                    <input type="text" id="ID_KEGIATAN" class="form-control"
+                                                        name="ID_KEGIATAN" value="{{ $daftar_resiko[0]->ID_KEGIATAN }}" hidden>
                                                 </div>
 
                                             

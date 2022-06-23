@@ -39,7 +39,38 @@ class AuthServiceProvider extends ServiceProvider
             return in_array($user->ID_ROLE, [superadmin,admin]);
         });
 
+        Gate::define('sidebar-daftarresiko', function (User $user) {
+            return in_array($user->ID_ROLE, [superadmin,admin]);
+        });
+
+        Gate::define('sidebar-analisisresiko', function (User $user) {
+            return in_array($user->ID_ROLE, [superadmin,admin]);
+        });
+
+        Gate::define('sidebar-celahpengendalian', function (User $user) {
+            return in_array($user->ID_ROLE, [superadmin,admin]);
+        });
+        Gate::define('sidebar-rtp', function (User $user) {
+            return in_array($user->ID_ROLE, [superadmin,admin]);
+        });
+
         Gate::define('sidebar-tujuanKegiatanUser', function (User $user) {
+            return in_array($user->ID_ROLE, [user]);
+        });
+
+        Gate::define('sidebar-daftarresikoUser', function (User $user) {
+            return in_array($user->ID_ROLE, [user]);
+        });
+
+        Gate::define('sidebar-analisisresikoUser', function (User $user) {
+            return in_array($user->ID_ROLE, [user]);
+        });
+
+        Gate::define('sidebar-celahpengendalianUser', function (User $user) {
+            return in_array($user->ID_ROLE, [user]);
+        });
+
+        Gate::define('sidebar-rtpUser', function (User $user) {
             return in_array($user->ID_ROLE, [user]);
         });
 

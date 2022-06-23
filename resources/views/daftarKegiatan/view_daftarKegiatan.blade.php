@@ -23,16 +23,15 @@
 
 @section("content")
 <div class="card">
-    <div class="card-header">
+    <!-- <div class="card-header">
         Tabel Daftar Kegiatan SKPD Kabupaten Sidoarjo
-    </div>
-
+    </div> -->
     <a href="/daftarKegiatan_insert_daftarKegiatan">
-	<button type="button" class="btn btn-info float-right" style="float: right; margin-right: 35px"><i class="fas fa-plus"></i>  Tambah Data </button>
+	<button type="button" class="btn btn-info float-right" style="float: right; margin-right: 35px; margin-top: 20px "><i class="fas fa-plus"></i>  Tambah Data </button>
 	</a>
 
     <div class="card-body">
-        <table class="table table-striped" id="table1">
+        <table rules="all" class="table table-striped" id="table1">
             <thead>
                 <tr>
                     <th style="text-align:center">Tahun Anggaran</th>
@@ -107,7 +106,7 @@
 
                     <td>
 						<a href='/daftarKegiatan_edit_daftarKegiatan_{{ $data->ID_DAFTAR }}'>
-						<button type="button" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</button>
+						<button type="button" class="btn btn-sm btn-info"><i class="bi bi-pencil-square"></i></button>
 						</a>
 
                         <!-- <a href='/daftarKegiatan_hapus_{{ $data->ID_DAFTAR }}'>

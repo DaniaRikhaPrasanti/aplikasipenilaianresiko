@@ -116,6 +116,7 @@ Route::get('/tujuanKegiatan_hapus_{ID_TUJUANKEGIATAN}&{ID_NAMAKEGIATAN}', [C_tuj
 
 
 Route::get('/daftarResiko', [C_daftarResiko::class, 'index'])->middleware('auth');
+Route::get('/daftarResikoAdmin', [C_daftarResiko::class, 'index1'])->middleware('auth');
 Route::get('/daftarResiko_tambah_daftarResiko_{ID_KEGIATAN}', [C_daftarResiko::class, 'insert_daftarResiko'])->middleware('auth');
 Route::post('/daftarResiko_tambah_daftarResiko', [C_daftarResiko::class, 'tambah_daftarResiko'])->middleware('auth');
 Route::get('/daftarResiko_view_tambah_daftarResiko_{ID_KEGIATAN}', [C_daftarResiko::class, 'view_tambah_daftarResiko'])->middleware('auth');
@@ -128,6 +129,7 @@ Route::post('/daftarResiko_revisi_daftarResiko', [C_daftarResiko::class, 'revisi
 Route::get('/daftarResiko_generate-docx_{ID_KEGIATAN}', [C_daftarResiko::class, 'generateDocx'])->middleware('auth');
 
 Route::get('/analisisResiko', [C_analisisResiko::class, 'index'])->middleware('auth');
+Route::get('/analisisResikoAdmin', [C_analisisResiko::class, 'index1'])->middleware('auth');
 Route::get('/analisisResiko_tambah_analisisResiko_{ID_DAFTARRESIKO}', [C_analisisResiko::class, 'insert_analisisResiko'])->middleware('auth');
 Route::post('/analisisResiko_tambah_analisisResiko', [C_analisisResiko::class, 'tambah_analisisResiko'])->middleware('auth');
 Route::get('/analisisResiko_edit_analisisResiko_{ID_DAFTARRESIKO}', [C_analisisResiko::class, 'edit_analisisResiko'])->middleware('auth');
@@ -139,6 +141,7 @@ Route::post('/analisisResiko_revisi_analisisResiko', [C_analisisResiko::class, '
 Route::get('/analisisResiko_generate-docx_{ID_KEGIATAN}', [C_analisisResiko::class, 'generateDocx'])->middleware('auth');
 
 Route::get('/RTP', [C_RTP::class, 'index'])->middleware('auth');
+Route::get('/RTPAdmin', [C_RTP::class, 'index1'])->middleware('auth');
 Route::get('RTP_insert_RTP', [C_RTP::class, 'insert_RTP'])->middleware('auth');
 Route::get('/RTP_edit_RTP_{ID_DAFTARRESIKO}', [C_RTP::class, 'edit_RTP'])->middleware('auth');
 Route::post('/RTP_update_RTP', [C_RTP::class, 'update_RTP'])->middleware('auth');
@@ -152,6 +155,7 @@ Route::get('/realisasiRTP', [C_realisasiRTP::class, 'index']);
 Route::get('realisasiRTP_insert_realisasiRTP', [C_realisasiRTP::class, 'insert_realisasiRTP']);
 
 Route::get('/celahPengendalian', [C_celahPengendalian::class, 'index'])->middleware('auth');
+Route::get('/celahPengendalianAdmin', [C_celahPengendalian::class, 'index1'])->middleware('auth');
 Route::get('celahPengendalian_insert_celahPengendalian', [C_celahPengendalian::class, 'insert_celahPengendalian'])->middleware('auth');
 Route::get('/celahPengendalian_edit_celahPengendalian_{ID_DAFTARRESIKO}', [C_celahPengendalian::class, 'edit_celahPengendalian'])->middleware('auth');
 Route::post('/celahPengendalian_update_celahPengendalian', [C_celahPengendalian::class, 'update_celahPengendalian'])->middleware('auth');

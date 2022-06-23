@@ -2,7 +2,7 @@
 
 @section("page_title","Aplikasi Penilaian Resiko")
 
-@section("title","Data User")
+@section("title","Tabel Data User")
 
 @section("breadcrumb")
 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -23,35 +23,35 @@
 
 @section("content")
 <div class="card">
-    <div class="card-header">
+    <!-- <div class="card-header">
         Tabel Daftar User
-    </div>
+    </div> -->
 
     <a href="/user_insert_user">
-	<button type="button" class="btn btn-info float-right" style="float: right; margin-right: 35px"><i class="fas fa-plus"></i>  Tambah Data User</button>
+	<button type="button" class="btn btn-sm btn-info float-right" style="float: right; margin-right: 35px; margin-top: 15px"><i class="fas fa-plus"></i> Tambah User</button>
 	</a>
 
     <div class="card-body">
         <table class="table table-striped" id="table1">
             <thead>
                 <tr>
-                    <th style="text-align:center">ID User</th>
-                    <th style="text-align:center">Nama SKPD</th>
-                    <th style="text-align:center">Username</th>
-                    <th style="text-align:center">Email</th>
-                    <th style="text-align:center">Password</th>
-                    <th style="text-align:center">Nama Kepala SKPD</th>
-                    <th style="text-align:center">NIP Kepala</th>
+                    <!-- <th style="text-align:center">ID User</th> -->
+                    <th style="text-align:center">SKPD</th>
+                    <!-- <th style="text-align:center">Username</th> -->
+                    <th style="text-align:center">EMAIL</th>
+                    <!-- <th style="text-align:center">Password</th> -->
+                    <th style="text-align:center">KEPALA SKPD</th>
+                    <th style="text-align:center">NIP KEPALA</th>
                     <th style="text-align:center">Role</th>
-                    <th style="text-align:center" width="20%">Aksi</th>
+                    <th style="text-align:center" width="10%">Aksi</th>
                 </tr>
             </thead>
             <tbody>
             @foreach($user as $data)
             <tr>
-                    <td>{{ $data->ID_USER }}</td>
+                    <!-- <td>{{ $data->ID_USER }}</td> -->
                     <td>{{ $data->NAMA_SKPD }}</td>
-                    <td>{{ $data->USERNAME }}</td>
+                    <!-- <td>{{ $data->USERNAME }}</td> -->
                     <td>{{ $data->email }}</td>
                     <!-- <td>{{ $data->password }}</td> -->
                     <td>{{ $data->KEPALA_SKPD }}</td>
@@ -65,15 +65,12 @@
 					</td>
                     <td>
 					<a href='/user_edit_user_{{ $data->ID_USER }}'>
-					<button type="button" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</button>
+					<button type="button" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i> </button>
 					</a>
 
                     <a href='/user_hapus_{{ $data->ID_USER }}'>
-					<button type="button" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> hapus</button>
+					<button type="button" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> </button>
 					</a>
-
-					<!-- <button onclick="confirmDelete('{{ $data->ID_USER }}')" class="btn btn-danger"><i class="fas fa-trash"></i> Hapus</button>
-					</td>           -->
             </tr> 
             @endforeach 
             </tbody>

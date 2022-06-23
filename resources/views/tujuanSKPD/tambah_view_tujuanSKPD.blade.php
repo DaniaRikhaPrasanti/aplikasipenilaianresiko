@@ -44,7 +44,7 @@
                                                     <input type="text" id="TAHUN_ANGGARAN" class="form-control"
                                                         name="TAHUN_ANGGARAN" value="{{$daftar_tujuan_kegiatan[0]->TAHUN_ANGGARAN}}" readonly>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <!-- <div class="col-md-4">
                                                     <label>Nama SKPD</label>
                                                 </div>
                                                 <div class="col-md-8 form-group">
@@ -54,7 +54,7 @@
                                                         name="NAMA_SKPD" value="{{$user->NAMA_SKPD}}" readonly>
                                                 @endif
 						                        @endforeach 
-                                                </div>
+                                                </div> -->
 
                                                 <div class="col-md-4">
                                                     <label>Tujuan SKPD</label>

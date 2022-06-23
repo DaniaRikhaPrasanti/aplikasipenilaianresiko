@@ -2,7 +2,7 @@
 
 @section("page_title","Aplikasi Penilaian Resiko")
 
-@section("title","Data Daftar Resiko")
+@section("title"," Tabel Daftar Resiko")
 
 @section("breadcrumb")
 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -25,9 +25,9 @@
 
 @section("content")
 <div class="card">
-    <div class="card-header">
+    <!-- <div class="card-header">
         Tabel Daftar Resiko 
-    </div>
+    </div> -->
     
     <div class="card-body">
         <table class="table table-striped" id="table1">
@@ -48,7 +48,6 @@
             @foreach($daftar_resiko as $data)
             <tr>
             <td>
-
                     @foreach($kegiatan as $nama2)
 					@if ($nama2->ID_KEGIATAN === $data->ID_KEGIATAN)
 					
@@ -65,7 +64,6 @@
 					@if ($us1->ID_USER === $daftar1->ID_USER)
                     {{$us1->NAMA_SKPD}}
                    
-
 					@endif
 					@endforeach 
                     @endif
@@ -126,9 +124,13 @@
                     <td>
                         @foreach($status as $status1)
                         @if ($status1->ID_STATUS === $data->ID_STATUS)
-                        {{$status1->STATUS}}
+                            @if ($status1->ID_STATUS == 1 ) <span class="badge bg-success">  valid
+                            @elseif ($status1->ID_STATUS == 2 ) <span class="badge bg-warning"> revisi
+                            <!-- {{$status1->STATUS}} -->
+                            @endif
                         @endif
                         @endforeach 
+                        </span>
                     </td>
                     <td>{{ $data->CATATAN1 }}</td>
                     <td>

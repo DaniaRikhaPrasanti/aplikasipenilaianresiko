@@ -31,65 +31,151 @@
                                     <form class="form form-horizontal">
                                         <div class="form-body">
                                             <div class="row">
-                                                <div class="col-md-4">
+                                                <div class="col-md-4" hidden>
                                                     <label>ID USER</label>
                                                 </div>
                                                 <div class="col-md-8 form-group">
                                                     <input type="text" id="ID_USER" class="form-control"
-                                                        name="ID_USER" value="{{$user[0]->ID_USER}}" readonly>
+                                                        name="ID_USER" value="{{$user[0]->ID_USER}}" hidden>
                                                 </div>
-                                                <div class="col-md-4">
+
+                                                <!-- <div class="col-md-4">
                                                     <label>NAMA SKPD</label>
                                                 </div>
                                                 <div class="col-md-8 form-group">
                                                     <input type="text" id="NAMA_SKPD" class="form-control"
                                                         name="NAMA_SKPD" value="{{$user[0]->NAMA_SKPD}}">
-                                                </div>
-                                                <div class="col-md-4">
+                                                </div> -->
+
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="NAMA_SKPD">Nama SKPD</label>
+                                                            <div class="position-relative">
+                                                                <input type="text"  id="NAMA_SKPD" class="form-control"  name="NAMA_SKPD"
+                                                                    value="{{$user[0]->NAMA_SKPD}}">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-person"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                <!-- <div class="col-md-4">
                                                     <label>USERNAME</label>
                                                 </div>
                                                 <div class="col-md-8 form-group">
                                                     <input type="text" id="USERNAME" class="form-control"
                                                         name="USERNAME" value="{{$user[0]->USERNAME}}">
-                                                </div>
-                                                <div class="col-md-4">
+                                                </div> -->
+
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="USERNAME">Username</label>
+                                                            <div class="position-relative">
+                                                                <input type="text" id="USERNAME" class="form-control"  name="USERNAME"
+                                                                value="{{$user[0]->USERNAME}}">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-file-person"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                <!-- <div class="col-md-4">
                                                     <label>EMAIL</label>
                                                 </div>
                                                 <div class="col-md-8 form-group">
                                                     <input type="text" id="email" class="form-control"
                                                         name="email" value="{{$user[0]->email}}">
-                                                </div>
-                                                <div class="col-md-4">
+                                                </div> -->
+
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="email">Email</label>
+                                                            <div class="position-relative">
+                                                                <input type="text" id="email" class="form-control" name="email"
+                                                                value="{{$user[0]->email}}" >
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-envelope"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                <!-- <div class="col-md-4">
                                                     <label>PASSWORD</label>
                                                 </div>
                                                 <div class="col-md-8 form-group">
                                                     <input type="password" id="password" class="form-control"
                                                         name="password" value="{{$user[0]->password}}">
-                                                </div>
-                                                <div class="col-md-4">
+                                                </div> -->
+
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="password">Password</label>
+                                                            <div class="position-relative">
+                                                                <input type="password" id="password" class="form-control" name="password"
+                                                                value="{{$user[0]->password}}" >
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-lock"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                <!-- <div class="col-md-4">
                                                     <label>Kepala SKPD</label>
                                                 </div>
                                                 <div class="col-md-8 form-group">
                                                     <input type="text" id="KEPALA_SKPD" class="form-control"
                                                         name="KEPALA_SKPD" value="{{$user[0]->KEPALA_SKPD}}">
-                                                </div>
-                                                <div class="col-md-4">
+                                                </div> -->
+
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="KEPALA_SKPD">Kepala SKPD</label>
+                                                            <div class="position-relative">
+                                                                <input type="text" id="KEPALA_SKPD" class="form-control" name="KEPALA_SKPD"
+                                                                value="{{$user[0]->KEPALA_SKPD}}">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-person-circle"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                <!-- <div class="col-md-4">
                                                     <label>NIP Kepala SKPD</label>
                                                 </div>
                                                 <div class="col-md-8 form-group">
                                                     <input type="text" id="NIP_KEPALA" class="form-control"
                                                         name="NIP_KEPALA" value="{{$user[0]->NIP_KEPALA}}">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label>ROLE</label>
-                                                </div>
-                                                <div class="col-md-8 form-group">
+                                                </div> -->
+
+                                                <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                            <label for="NIP_KEPALA">NIP Kepala SKPD</label>
+                                                            <div class="position-relative">
+                                                                <input type="text" id="NIP_KEPALA" class="form-control" name="NIP_KEPALA"
+                                                                value="{{$user[0]->NIP_KEPALA}}">
+                                                                <div class="form-control-icon">
+                                                                    <i class="bi bi-person-badge"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group has-icon-left">
+                                                        <label for="ID_ROLE">ROLE</label>
+                                                         <div class="position-relative">
                                                 <select class="form-control select2" name="ID_ROLE">
                                                 @foreach ($role as $datarole)
                                                 <option value="{{ $datarole->ID_ROLE}}">{{ $datarole->NAMA_ROLE}}</option>
                                                 @endforeach
                                                 </select>
                                                 <br>
+                                                </div>
                                                 </div>
                                                 <div class="col-sm-12 d-flex justify-content-end">
                                                     <button type="submit"

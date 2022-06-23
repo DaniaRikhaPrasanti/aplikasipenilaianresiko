@@ -61,48 +61,7 @@
                         Lihat Detail Tujuan
                         </a>
 						</td>
-                    <!-- <td>
-                        @foreach($tujuan_skpd as $tujuan)
-						@if ($tujuan->ID_DAFTAR === $data->ID_DAFTAR)
-						<a href='/sasaran_tambah_view_sasaran_{{ $tujuan->ID_TUJUANSKPD }}'>
-                        Input sasaran
-                        </a>
-                        @endif
-						@endforeach
-						</td>
-                    <td>
-                        @foreach($tujuan_skpd as $tuj1)
-						@if ($tuj1->ID_DAFTAR === $data->ID_DAFTAR)
-
-                        @foreach($sasaran as $sas1)
-						@if ($sas1->ID_TUJUANSKPD === $tuj1->ID_TUJUANSKPD)
-						<a href='/namaKegiatan_view_namaKegiatan_{{ $sas1->ID_SASARAN }}'>
-                        Input Nama Kegiatan
-                        </a>
-                        @endif
-						@endforeach
-                        @endif
-						@endforeach
-						</td>
-                    <td>
-                        @foreach($tujuan_skpd as $tuj2)
-						@if ($tuj2->ID_DAFTAR === $data->ID_DAFTAR)
-
-                        @foreach($sasaran as $sas2)
-						@if ($sas2->ID_TUJUANSKPD === $tuj2->ID_TUJUANSKPD)
-
-                        @foreach($nama_kegiatan as $nama1)
-						@if ($nama1->ID_SASARAN === $sas2->ID_SASARAN)
-						<a href='/tujuanKegiatan_tambah_view_tujuanKegiatan_{{ $nama1->ID_NAMAKEGIATAN }}'>
-                        Input Tujuan Kegiatan
-                        </a>
-                        @endif
-						@endforeach
-                        @endif
-						@endforeach
-                        @endif
-						@endforeach
-						</td> -->
+                  
                     <td>{{ $data->CATATAN }}</td>
 
                     <td>
